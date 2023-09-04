@@ -26,13 +26,13 @@ In this section we will descibe how the project works.
 
 ```json
 {
-    "cohere": {
-        "api_key": "COHERE_API_KEY"
-    },
-    "pinecone": {
-        "api_key": "PINECONE_API_KEY",
-        "env": "PINECONE_ENVIRONMENT"
-    }
+  "cohere": {
+    "api_key": "COHERE_API_KEY"
+  },
+  "pinecone": {
+    "api_key": "PINECONE_API_KEY",
+    "env": "PINECONE_ENVIRONMENT"
+  }
 }
 ```
 
@@ -75,6 +75,8 @@ What do you have in mind?:
 Any more question? (y/n)
 >>> n
 ```
+
+The `chat.py` now renders an **HTML** webpage using **Flask API**.
 
 ## Credits
 
