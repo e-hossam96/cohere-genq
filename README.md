@@ -76,7 +76,7 @@ Any more question? (y/n)
 >>> n
 ```
 
-The `chat.py` now renders an **HTML** webpage using **Flask API**.
+The `chat.py` is now a **Flask API**.
 
 ## Credits
 
