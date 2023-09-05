@@ -16,11 +16,6 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-@app.route("/")
-def land_page():
-    return render_template("index.html")
-
-
 def llm_chat(api, index, question, prompt_temp, embedding_model="embed-english-v2.0"):
     """Chat with the stored data.
 
@@ -37,7 +32,7 @@ def llm_chat(api, index, question, prompt_temp, embedding_model="embed-english-v
     return answer.generations[0].text
 
 
-@app.route("/answer", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def main():
     """Construct the main chat pipeline."""
     template = """Answer the question based on the context below. If the
@@ -69,7 +64,8 @@ def main():
 
     question = request.form["question"]
     answer = llm_chat(api, index, question, prompt_template)
-    return render_template("index.html", answer=answer)
+    # return render_template("index.html", answer=answer)
+    return {"answer": answer}
 
 
 if __name__ == "__main__":
