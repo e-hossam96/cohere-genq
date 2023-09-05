@@ -8,9 +8,8 @@ Send a question to the Cohere model and answer it using the \
 import json
 import cohere
 import pinecone
-from pprint import pprint as pp
 from langchain import PromptTemplate
-from flask import Flask, request, render_template
+from flask import Flask, request
 
 
 app = Flask(__name__)
@@ -64,7 +63,6 @@ def main():
 
     question = request.form["question"]
     answer = llm_chat(api, index, question, prompt_template)
-    # return render_template("index.html", answer=answer)
     return {"answer": answer}
 
 
